@@ -1,7 +1,9 @@
 import { createSlice }  from "@reduxjs/toolkit";
 
 const contactsInitialState = [
-    // { name: "dkkkfkd" }
+    //  items: [],
+    // isLoading: false,
+    // error: null // turn into an object w contacts inside "items"
 ];
 const contactsSlice = createSlice({
     name: 'contacts',
