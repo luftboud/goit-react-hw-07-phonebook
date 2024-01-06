@@ -24,7 +24,7 @@ const App = () => {
         <h2>Contacts</h2>
         <Filter/>
       <ContactList>
-        {isLoading && <b>Request in progress...</b>}
+        {isLoading && !error && <b>Request in progress...</b>}
         </ContactList>
       </div>
     );
