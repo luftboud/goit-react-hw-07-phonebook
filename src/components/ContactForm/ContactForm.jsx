@@ -1,17 +1,17 @@
 
 import { useState } from 'react';
-import { addContactAction } from 'store/Contacts/contactsSlice';
+import { setContact } from 'store/Contacts/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector((state) => state.contacts)
-  
+  const contacts = useSelector((state) => state.contacts.items)
   const dispatch = useDispatch();
   
   const addContact = (cont) => {
-    dispatch(addContactAction(cont))
+    console.log(cont);
+    dispatch(setContact(cont))
   }
 
    const handleChange = evt => {
@@ -37,6 +37,7 @@ const ContactForm = () => {
       window.alert('Please, fill all fields.');
       return
     }
+     console.log(`name: ${contName}, number: ${phNumber}`);
     addContact({name: contName, number: phNumber})
   };
   return (
